@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.0" sequence="0" timestamp="1415305382467" analysisTimestamp="1415305382486" release="">
+<BugCollection version="3.0.0" sequence="0" timestamp="1415310073137" analysisTimestamp="1415310073185" release="">
   <Project projectName="">
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Demo.class</Jar>
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\LauncherDB.class</Jar>
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Player.class</Jar>
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Result.class</Jar>
-    <AuxClasspathEntry>C:\Users\&#321;ukasz\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.2\16561cb11c221b5928119e10d7636c95ee5c960d\ini4j-0.5.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\&#321;ukasz\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Demo.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\LauncherDB.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\package-info.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Player.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Result.java</SrcDir>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Demo.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\LauncherDB.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Player.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Result.class</Jar>
+    <AuxClasspathEntry>C:\Users\Bolo\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.2\16561cb11c221b5928119e10d7636c95ee5c960d\ini4j-0.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Bolo\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Demo.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\LauncherDB.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Player.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Result.java</SrcDir>
   </Project>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Thu, 6 Nov 2014 21:23:02 +0100" total_classes="4" referenced_classes="18" total_bugs="0" total_size="52" num_packages="1" java_version="1.7.0_51" vm_version="24.51-b03" cpu_seconds="2.50" clock_seconds="1.13" peak_mbytes="94.50" alloc_mbytes="3616.00" gc_seconds="0.02">
-    <PackageStats package="pl.grm.boll.lib" total_bugs="0" total_types="4" total_size="52">
+  <FindBugsSummary timestamp="Thu, 6 Nov 2014 22:41:13 +0100" total_classes="4" referenced_classes="19" total_bugs="0" total_size="59" num_packages="1" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="3.63" clock_seconds="2.27" peak_mbytes="112.27" alloc_mbytes="910.50" gc_seconds="0.12">
+    <PackageStats package="pl.grm.boll.lib" total_bugs="0" total_types="4" total_size="59">
       <ClassStats class="pl.grm.boll.lib.Demo" sourceFile="Demo.java" interface="false" size="5" bugs="0"/>
       <ClassStats class="pl.grm.boll.lib.LauncherDB" sourceFile="LauncherDB.java" interface="true" size="5" bugs="0"/>
       <ClassStats class="pl.grm.boll.lib.Player" sourceFile="Player.java" interface="false" size="3" bugs="0"/>
-      <ClassStats class="pl.grm.boll.lib.Result" sourceFile="Result.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="pl.grm.boll.lib.Result" sourceFile="Result.java" interface="false" size="46" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="197" invocations="298" avgMicrosecondsPerInvocation="662" maxMicrosecondsPerInvocation="12675" standardDeviationMircosecondsPerInvocation="1558"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="74" invocations="18" avgMicrosecondsPerInvocation="4142" maxMicrosecondsPerInvocation="23458" standardDeviationMircosecondsPerInvocation="6121"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="65" invocations="65" avgMicrosecondsPerInvocation="1013" maxMicrosecondsPerInvocation="15932" standardDeviationMircosecondsPerInvocation="2045"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="43" invocations="267" avgMicrosecondsPerInvocation="161" maxMicrosecondsPerInvocation="1470" standardDeviationMircosecondsPerInvocation="254"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="33" invocations="18" avgMicrosecondsPerInvocation="1872" maxMicrosecondsPerInvocation="32617" standardDeviationMircosecondsPerInvocation="7457"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="28" invocations="18" avgMicrosecondsPerInvocation="1569" maxMicrosecondsPerInvocation="11250" standardDeviationMircosecondsPerInvocation="2785"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="24" invocations="18" avgMicrosecondsPerInvocation="1358" maxMicrosecondsPerInvocation="4992" standardDeviationMircosecondsPerInvocation="1697"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="21" invocations="18" avgMicrosecondsPerInvocation="1215" maxMicrosecondsPerInvocation="21782" standardDeviationMircosecondsPerInvocation="4988"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="21" invocations="18" avgMicrosecondsPerInvocation="1166" maxMicrosecondsPerInvocation="6064" standardDeviationMircosecondsPerInvocation="1792"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="19" invocations="18" avgMicrosecondsPerInvocation="1083" maxMicrosecondsPerInvocation="6434" standardDeviationMircosecondsPerInvocation="1495"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="19" invocations="25" avgMicrosecondsPerInvocation="769" maxMicrosecondsPerInvocation="10804" standardDeviationMircosecondsPerInvocation="2100"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="15" invocations="300" avgMicrosecondsPerInvocation="52" maxMicrosecondsPerInvocation="754" standardDeviationMircosecondsPerInvocation="54"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="508" invocations="311" avgMicrosecondsPerInvocation="1635" maxMicrosecondsPerInvocation="102159" standardDeviationMircosecondsPerInvocation="7145"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="121" invocations="73" avgMicrosecondsPerInvocation="1668" maxMicrosecondsPerInvocation="50903" standardDeviationMircosecondsPerInvocation="6035"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="101" invocations="19" avgMicrosecondsPerInvocation="5332" maxMicrosecondsPerInvocation="27647" standardDeviationMircosecondsPerInvocation="8542"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="81" invocations="279" avgMicrosecondsPerInvocation="293" maxMicrosecondsPerInvocation="7829" standardDeviationMircosecondsPerInvocation="841"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="73" invocations="19" avgMicrosecondsPerInvocation="3861" maxMicrosecondsPerInvocation="33108" standardDeviationMircosecondsPerInvocation="8055"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="71" invocations="20" avgMicrosecondsPerInvocation="3574" maxMicrosecondsPerInvocation="69411" standardDeviationMircosecondsPerInvocation="15104"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="61" invocations="26" avgMicrosecondsPerInvocation="2379" maxMicrosecondsPerInvocation="35398" standardDeviationMircosecondsPerInvocation="6821"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.asm.ClassReaderAnalysisEngine" totalMilliseconds="54" invocations="282" avgMicrosecondsPerInvocation="194" maxMicrosecondsPerInvocation="45373" standardDeviationMircosecondsPerInvocation="2709"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CalledMethods" totalMilliseconds="49" invocations="19" avgMicrosecondsPerInvocation="2588" maxMicrosecondsPerInvocation="39491" standardDeviationMircosecondsPerInvocation="8729"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="43" invocations="4" avgMicrosecondsPerInvocation="10875" maxMicrosecondsPerInvocation="43213" standardDeviationMircosecondsPerInvocation="18670"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="36" invocations="313" avgMicrosecondsPerInvocation="115" maxMicrosecondsPerInvocation="1300" standardDeviationMircosecondsPerInvocation="130"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="34" invocations="19" avgMicrosecondsPerInvocation="1791" maxMicrosecondsPerInvocation="12482" standardDeviationMircosecondsPerInvocation="3246"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>
