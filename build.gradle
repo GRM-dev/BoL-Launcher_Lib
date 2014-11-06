@@ -8,7 +8,7 @@ version = "0.0.0"
 group= "pl.grm"
 
 description = 'BOL Launcher_Lib'
-archivesBaseName = "BattleOfLegends-Launcher_Lib"
+archivesBaseName = "BoL-Launcher_Lib"
 
 repositories {
     mavenCentral()
