@@ -37,6 +37,15 @@ public interface LauncherDB extends Remote {
 	public Result checkIfActivated(String login) throws RemoteException;
 	
 	/**
+	 * Checks user Salt.
+	 * 
+	 * @param login
+	 * @return {@link Result} with resultString containing userSalt.
+	 * @throws RemoteException
+	 */
+	public Result checkSalt(String login) throws RemoteException;
+	
+	/**
 	 * Not implemented yet!
 	 * <p>
 	 * Downloads all player data from DB.
