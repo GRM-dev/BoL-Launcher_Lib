@@ -55,4 +55,10 @@ public interface LauncherDB extends Remote {
 	 * @throws RemoteException
 	 */
 	public Player getPlayerData(String login) throws RemoteException;
+	
+	/**
+	 * @return Host IP in String
+	 * @throws RemoteException
+	 */
+	public String getHostIP() throws RemoteException;
 }
