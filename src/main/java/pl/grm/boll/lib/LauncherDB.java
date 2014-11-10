@@ -61,4 +61,10 @@ public interface LauncherDB extends Remote {
 	 * @throws RemoteException
 	 */
 	public String getHostIP() throws RemoteException;
+	
+	/**
+	 * @return Client IP in String
+	 * @throws RemoteException
+	 */
+	public String getClientIP() throws RemoteException;
 }
