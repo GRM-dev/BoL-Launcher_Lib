@@ -3,6 +3,8 @@ package pl.grm.boll.lib;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
+import pl.grm.boll.lib.game.Player;
+
 /**
  * Interface which extend Remote of RMI controller to game BOL.
  */
