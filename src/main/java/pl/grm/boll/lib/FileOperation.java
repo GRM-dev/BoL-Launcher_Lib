@@ -38,7 +38,6 @@ public class FileOperation {
 	public static String getProcessId(final String fallback) {
 		final String jvmName = ManagementFactory.getRuntimeMXBean().getName();
 		final int index = jvmName.indexOf('@');
-		
 		if (index < 1) { return fallback; }
 		try {
 			return Long.toString(Long.parseLong(jvmName.substring(0, index)));
@@ -49,14 +48,12 @@ public class FileOperation {
 	
 	public static Logger setupLauncherLogger(Class<?> classHandler) throws ClassNotFoundException,
 			IllegalArgumentException, IllegalAccessException, NoSuchFieldException {
-		// Class<?> ConfigHandler =
-		// Class.forName("pl.grm.boll.config.ConfigHandler");
 		logger = Logger.getLogger(classHandler.getName());
 		try {
 			
 			FileHandler fileHandler = new FileHandler((String) classHandler.getDeclaredField(
-					"BoL_Conf_Loc").get(classHandler)
-					+ (String) classHandler.getDeclaredField("logFileName").get(classHandler),
+					"BOL_CONF_LOC").get(classHandler)
+					+ (String) classHandler.getDeclaredField("LOG_FILE_NAME").get(classHandler),
 					1048476, 1, true);
 			logger.addHandler(fileHandler);
 			SimpleFormatter formatter = new SimpleFormatter();
@@ -69,26 +66,24 @@ public class FileOperation {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
 		logger.info("Config&Log Location: "
-				+ (String) classHandler.getDeclaredField("BoL_Conf_Loc").get(classHandler));
+				+ (String) classHandler.getDeclaredField("BOL_CONF_LOC").get(classHandler));
 		logger.info("Launcher is running ...");
 		return logger;
 	}
 	
 	public static Wini readConfigFile(Class<?> classHandler) throws IllegalArgumentException,
 			IllegalAccessException, NoSuchFieldException, SecurityException {
-		// Class ConfigHandler =
-		// Class.forName("pl.grm.boll.config.ConfigHandler");
-		File dir = new File((String) classHandler.getDeclaredField("BoL_Conf_Loc")
+		File dir = new File((String) classHandler.getDeclaredField("BOL_CONF_LOC")
 				.get(classHandler));
 		Wini ini = null;
 		if (!dir.exists()) {
 			dir.mkdir();
 		}
-		File file = new File((String) classHandler.getDeclaredField("BoL_Conf_Loc").get(
+		File file = new File((String) classHandler.getDeclaredField("BOL_CONF_LOC").get(
 				classHandler)
-				+ (String) classHandler.getDeclaredField("configFileName").get(classHandler));
+				+ (String) classHandler.getDeclaredField("CONFIG_FILE_NAME").get(classHandler));
 		if (!file.exists()) {
-			createIniFile(file);
+			createIniFile(file, classHandler);
 		}
 		ini = readIni(file);
 		return ini;
@@ -114,18 +109,14 @@ public class FileOperation {
 		return ini;
 	}
 	
-	private static void createIniFile(File file) {
+	private static void createIniFile(File file, Class<?> classHandler) {
 		Wini ini = null;
 		try {
 			file.createNewFile();
 			ini = new Wini(file);
-			
-			// Launcher:
-			ini.put("Launcher", "version", "0.0.0");
+			ini.put("Launcher", "version", classHandler.getDeclaredField("LAUNCHER_VERSION"));
 			ini.put("Launcher", "login", "");
 			ini.put("Launcher", "pass", "");
-			
-			// Game:
 			ini.put("Game", "version", "0.0.0");
 			ini.put("Graphic", "resolutionX", "");
 			ini.put("Graphic", "resolutionY", "");
@@ -133,6 +124,12 @@ public class FileOperation {
 			ini.store();
 		}
 		catch (IOException e) {
+			logger.log(Level.SEVERE, e.toString(), e);
+		}
+		catch (NoSuchFieldException e) {
+			logger.log(Level.SEVERE, e.toString(), e);
+		}
+		catch (SecurityException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
 	}
