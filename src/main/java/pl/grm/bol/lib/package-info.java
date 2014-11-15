@@ -3,4 +3,4 @@
  * <p>
  * Both Client & Server
  */
-package pl.grm.boll.lib;
+package pl.grm.bol.lib;

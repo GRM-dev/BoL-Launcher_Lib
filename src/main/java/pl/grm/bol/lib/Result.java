@@ -1,4 +1,4 @@
-package pl.grm.boll.lib;
+package pl.grm.bol.lib;
 
 import java.io.Serializable;
 
