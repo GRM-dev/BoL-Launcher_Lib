@@ -47,7 +47,7 @@ public class FileOperation {
 		return fallback;
 	}
 	
-	public static Logger setupLauncherLogger(Class<?> classHandler)
+	public static Logger setupLogger(Class<?> classHandler)
 			throws ClassNotFoundException, IllegalArgumentException,
 			IllegalAccessException, NoSuchFieldException {
 		logger = Logger.getLogger(classHandler.getName());

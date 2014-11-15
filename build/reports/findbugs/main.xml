@@ -1,40 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.0" sequence="0" timestamp="1415310659975" analysisTimestamp="1415310659992" release="">
+<BugCollection version="3.0.0" sequence="0" timestamp="1416070173181" analysisTimestamp="1416070173397" release="">
   <Project projectName="">
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Demo.class</Jar>
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\LauncherDB.class</Jar>
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Player.class</Jar>
-    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\boll\lib\Result.class</Jar>
-    <AuxClasspathEntry>C:\Users\&#321;ukasz\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.2\16561cb11c221b5928119e10d7636c95ee5c960d\ini4j-0.5.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\&#321;ukasz\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Demo.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\LauncherDB.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\package-info.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Player.java</SrcDir>
-    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\boll\lib\Result.java</SrcDir>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\FileOperation.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\LauncherDB.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\Result.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\Player.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\PlayerConfiguration.class</Jar>
+    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\Position.class</Jar>
+    <AuxClasspathEntry>C:\Users\Bolo\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.2\16561cb11c221b5928119e10d7636c95ee5c960d\ini4j-0.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Bolo\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\FileOperation.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\LauncherDB.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\Result.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\package-info.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\Player.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\PlayerConfiguration.java</SrcDir>
+    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\Position.java</SrcDir>
   </Project>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
+    <Class classname="pl.grm.bol.lib.FileOperation">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="141" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.FileOperation" name="createIniFile" signature="(Ljava/io/File;Ljava/lang/Class;)V" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="118" end="141" startBytecode="0" endBytecode="413" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Method>
+    <Method classname="java.io.File" name="createNewFile" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1007" end="1012" startBytecode="0" endBytecode="98" sourcefile="File.java" sourcepath="java/io/File.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="120" end="120" startBytecode="3" endBytecode="3" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
+    <Class classname="pl.grm.bol.lib.FileOperation">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="141" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.FileOperation" name="readConfigFile" signature="(Ljava/lang/Class;)Lorg/ini4j/Wini;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="80" end="94" startBytecode="0" endBytecode="252" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Method>
+    <Method classname="java.io.File" name="mkdir" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1309" end="1316" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="84" end="84" startBytecode="31" endBytecode="31" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
+    <Class classname="pl.grm.bol.lib.Result">
+      <SourceLine classname="pl.grm.bol.lib.Result" start="7" end="86" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.Result" name="getResultIntArray" signature="()[I" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.Result" start="78" end="78" startBytecode="0" endBytecode="46" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+    </Method>
+    <Field classname="pl.grm.bol.lib.Result" name="resultIntArray" signature="[I" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.Result" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+    </Field>
+    <SourceLine classname="pl.grm.bol.lib.Result" start="78" end="78" startBytecode="4" endBytecode="4" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+  </BugInstance>
+  <BugInstance type="EI_EXPOSE_REP2" priority="2" rank="18" abbrev="EI2" category="MALICIOUS_CODE">
+    <Class classname="pl.grm.bol.lib.Result">
+      <SourceLine classname="pl.grm.bol.lib.Result" start="7" end="86" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.Result" name="setResultIntArray" signature="([I)V" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.Result" start="82" end="83" startBytecode="0" endBytecode="61" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+    </Method>
+    <Field classname="pl.grm.bol.lib.Result" name="resultIntArray" signature="[I" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.Result" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+    </Field>
+    <LocalVariable name="resultIntArray" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
+    <SourceLine classname="pl.grm.bol.lib.Result" start="82" end="82" startBytecode="2" endBytecode="2" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
+  </BugInstance>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Thu, 6 Nov 2014 22:50:59 +0100" total_classes="4" referenced_classes="19" total_bugs="0" total_size="59" num_packages="1" java_version="1.7.0_51" vm_version="24.51-b03" cpu_seconds="2.61" clock_seconds="1.06" peak_mbytes="94.37" alloc_mbytes="3616.00" gc_seconds="0.02">
-    <PackageStats package="pl.grm.boll.lib" total_bugs="0" total_types="4" total_size="59">
-      <ClassStats class="pl.grm.boll.lib.Demo" sourceFile="Demo.java" interface="false" size="5" bugs="0"/>
-      <ClassStats class="pl.grm.boll.lib.LauncherDB" sourceFile="LauncherDB.java" interface="true" size="5" bugs="0"/>
-      <ClassStats class="pl.grm.boll.lib.Player" sourceFile="Player.java" interface="false" size="3" bugs="0"/>
-      <ClassStats class="pl.grm.boll.lib.Result" sourceFile="Result.java" interface="false" size="46" bugs="0"/>
+  <FindBugsSummary timestamp="Sat, 15 Nov 2014 17:49:33 +0100" total_classes="6" referenced_classes="45" total_bugs="4" total_size="231" num_packages="2" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="7.04" clock_seconds="6.18" peak_mbytes="115.46" alloc_mbytes="910.50" gc_seconds="0.18" priority_2="4">
+    <PackageStats package="pl.grm.bol.lib" total_bugs="4" total_types="3" total_size="150" priority_2="4">
+      <ClassStats class="pl.grm.bol.lib.FileOperation" sourceFile="FileOperation.java" interface="false" size="87" bugs="2" priority_2="2"/>
+      <ClassStats class="pl.grm.bol.lib.LauncherDB" sourceFile="LauncherDB.java" interface="true" size="6" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.Result" sourceFile="Result.java" interface="false" size="57" bugs="2" priority_2="2"/>
+    </PackageStats>
+    <PackageStats package="pl.grm.bol.lib.game" total_bugs="0" total_types="3" total_size="81">
+      <ClassStats class="pl.grm.bol.lib.game.Player" sourceFile="Player.java" interface="false" size="33" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.game.PlayerConfiguration" sourceFile="PlayerConfiguration.java" interface="false" size="3" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.game.Position" sourceFile="Position.java" interface="false" size="45" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="174" invocations="299" avgMicrosecondsPerInvocation="582" maxMicrosecondsPerInvocation="10966" standardDeviationMircosecondsPerInvocation="1260"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="87" invocations="19" avgMicrosecondsPerInvocation="4597" maxMicrosecondsPerInvocation="29179" standardDeviationMircosecondsPerInvocation="7611"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="69" invocations="67" avgMicrosecondsPerInvocation="1033" maxMicrosecondsPerInvocation="13436" standardDeviationMircosecondsPerInvocation="1865"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="42" invocations="268" avgMicrosecondsPerInvocation="156" maxMicrosecondsPerInvocation="2377" standardDeviationMircosecondsPerInvocation="267"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="33" invocations="20" avgMicrosecondsPerInvocation="1654" maxMicrosecondsPerInvocation="31776" standardDeviationMircosecondsPerInvocation="6911"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="22" invocations="19" avgMicrosecondsPerInvocation="1176" maxMicrosecondsPerInvocation="7582" standardDeviationMircosecondsPerInvocation="1732"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="22" invocations="26" avgMicrosecondsPerInvocation="854" maxMicrosecondsPerInvocation="10346" standardDeviationMircosecondsPerInvocation="2016"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="21" invocations="19" avgMicrosecondsPerInvocation="1119" maxMicrosecondsPerInvocation="5533" standardDeviationMircosecondsPerInvocation="1685"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="20" invocations="19" avgMicrosecondsPerInvocation="1069" maxMicrosecondsPerInvocation="5919" standardDeviationMircosecondsPerInvocation="1522"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="19" invocations="19" avgMicrosecondsPerInvocation="1017" maxMicrosecondsPerInvocation="5148" standardDeviationMircosecondsPerInvocation="1512"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="18" invocations="301" avgMicrosecondsPerInvocation="59" maxMicrosecondsPerInvocation="996" standardDeviationMircosecondsPerInvocation="80"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="13" invocations="19" avgMicrosecondsPerInvocation="686" maxMicrosecondsPerInvocation="12732" standardDeviationMircosecondsPerInvocation="2839"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1358" invocations="477" avgMicrosecondsPerInvocation="2847" maxMicrosecondsPerInvocation="272282" standardDeviationMircosecondsPerInvocation="15909"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="651" invocations="476" avgMicrosecondsPerInvocation="1368" maxMicrosecondsPerInvocation="86768" standardDeviationMircosecondsPerInvocation="6338"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="397" invocations="6" avgMicrosecondsPerInvocation="66285" maxMicrosecondsPerInvocation="294440" standardDeviationMircosecondsPerInvocation="108585"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="290" invocations="58" avgMicrosecondsPerInvocation="5005" maxMicrosecondsPerInvocation="278040" standardDeviationMircosecondsPerInvocation="36167"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="205" invocations="45" avgMicrosecondsPerInvocation="4562" maxMicrosecondsPerInvocation="110815" standardDeviationMircosecondsPerInvocation="16317"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="175" invocations="440" avgMicrosecondsPerInvocation="399" maxMicrosecondsPerInvocation="103043" standardDeviationMircosecondsPerInvocation="4932"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="122" invocations="55" avgMicrosecondsPerInvocation="2218" maxMicrosecondsPerInvocation="49584" standardDeviationMircosecondsPerInvocation="8025"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="94" invocations="53" avgMicrosecondsPerInvocation="1775" maxMicrosecondsPerInvocation="69392" standardDeviationMircosecondsPerInvocation="9432"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>
