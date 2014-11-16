@@ -16,8 +16,7 @@ import org.ini4j.Wini;
 public class FileOperation {
 	private static Logger	logger;
 	
-	public static String getCurrentJar(Class<?> classHandler)
-			throws UnsupportedEncodingException {
+	public static String getCurrentJar(Class<?> classHandler) throws UnsupportedEncodingException {
 		String jarFileLoc = "";
 		jarFileLoc = URLDecoder.decode(classHandler.getProtectionDomain().getCodeSource()
 				.getLocation().getPath(), "UTF-8");
@@ -47,16 +46,11 @@ public class FileOperation {
 		return fallback;
 	}
 	
-	public static Logger setupLogger(Class<?> classHandler)
-			throws ClassNotFoundException, IllegalArgumentException,
-			IllegalAccessException, NoSuchFieldException {
-		logger = Logger.getLogger(classHandler.getName());
+	public static Logger setupLogger(String fileName) throws IllegalArgumentException {
+		logger = Logger.getLogger(fileName);
 		try {
-			
-			FileHandler fileHandler = new FileHandler((String) classHandler
-					.getDeclaredField("BOL_CONF_PATH").get(classHandler)
-					+ (String) classHandler.getDeclaredField("LOG_FILE_NAME").get(
-							classHandler), 1048476, 1, true);
+			FileHandler fileHandler = new FileHandler(Config.BOL_CONF_PATH + fileName, 1048476, 1,
+					true);
 			logger.addHandler(fileHandler);
 			SimpleFormatter formatter = new SimpleFormatter();
 			fileHandler.setFormatter(formatter);
@@ -67,26 +61,19 @@ public class FileOperation {
 		catch (IOException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
-		logger.info("Config&Log Location: "
-				+ (String) classHandler.getDeclaredField("BOL_CONF_PATH").get(
-						classHandler));
-		logger.info("Launcher is running ...");
+		logger.info("Config&Log Location: " + Config.BOL_CONF_PATH);
+		logger.info("Logger is running ...");
 		return logger;
 	}
 	
-	public static Wini readConfigFile(Class<?> classHandler)
-			throws IllegalArgumentException, IllegalAccessException,
-			NoSuchFieldException, SecurityException {
-		File dir = new File((String) classHandler.getDeclaredField("BOL_CONF_PATH").get(
-				classHandler));
+	public static Wini readConfigFile(Class<?> classHandler) throws IllegalArgumentException,
+			SecurityException {
+		File dir = new File(Config.BOL_CONF_PATH);
 		Wini ini = null;
 		if (!dir.exists()) {
 			dir.mkdir();
 		}
-		File file = new File((String) classHandler.getDeclaredField("BOL_CONF_PATH").get(
-				classHandler)
-				+ (String) classHandler.getDeclaredField("CONFIG_FILE_NAME").get(
-						classHandler));
+		File file = new File(Config.BOL_CONF_PATH + Config.CONFIG_FILE_NAME);
 		if (!file.exists()) {
 			createIniFile(file, classHandler);
 		}
@@ -119,8 +106,7 @@ public class FileOperation {
 		try {
 			file.createNewFile();
 			ini = new Wini(file);
-			ini.put("Launcher", "version",
-					classHandler.getDeclaredField("LAUNCHER_VERSION"));
+			ini.put("Launcher", "version", classHandler.getDeclaredField("LAUNCHER_VERSION"));
 			ini.put("Launcher", "login", "");
 			ini.put("Launcher", "pass", "");
 			ini.put("Game", "version", "0.0.0");
