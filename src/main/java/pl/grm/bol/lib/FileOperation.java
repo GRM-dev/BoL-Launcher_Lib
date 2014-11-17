@@ -16,7 +16,8 @@ import org.ini4j.Wini;
 public class FileOperation {
 	private static Logger	logger;
 	
-	public static String getCurrentJar(Class<?> classHandler) throws UnsupportedEncodingException {
+	public static String getCurrentJarPath(Class<?> classHandler)
+			throws UnsupportedEncodingException {
 		String jarFileLoc = "";
 		jarFileLoc = URLDecoder.decode(classHandler.getProtectionDomain().getCodeSource()
 				.getLocation().getPath(), "UTF-8");
@@ -49,7 +50,7 @@ public class FileOperation {
 	public static Logger setupLogger(String fileName) throws IllegalArgumentException {
 		logger = Logger.getLogger(fileName);
 		try {
-			FileHandler fileHandler = new FileHandler(Config.BOL_CONF_PATH + fileName, 1048476, 1,
+			FileHandler fileHandler = new FileHandler(Config.BOL_MAIN_PATH + fileName, 1048476, 1,
 					true);
 			logger.addHandler(fileHandler);
 			SimpleFormatter formatter = new SimpleFormatter();
@@ -61,21 +62,21 @@ public class FileOperation {
 		catch (IOException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
-		logger.info("Config&Log Location: " + Config.BOL_CONF_PATH);
+		logger.info("Config&Log Location: " + Config.BOL_MAIN_PATH);
 		logger.info("Logger is running ...");
 		return logger;
 	}
 	
-	public static Wini readConfigFile(Class<?> classHandler) throws IllegalArgumentException,
+	public static Wini readConfigFile(String launcherVersion) throws IllegalArgumentException,
 			SecurityException {
-		File dir = new File(Config.BOL_CONF_PATH);
+		File dir = new File(Config.BOL_MAIN_PATH);
 		Wini ini = null;
 		if (!dir.exists()) {
 			dir.mkdir();
 		}
-		File file = new File(Config.BOL_CONF_PATH + Config.CONFIG_FILE_NAME);
+		File file = new File(Config.BOL_MAIN_PATH + Config.CONFIG_FILE_NAME);
 		if (!file.exists()) {
-			createIniFile(file, classHandler);
+			createConfigFile(file, launcherVersion);
 		}
 		ini = readIni(file);
 		return ini;
@@ -101,12 +102,12 @@ public class FileOperation {
 		return ini;
 	}
 	
-	private static void createIniFile(File file, Class<?> classHandler) {
+	private static void createConfigFile(File file, String launcherVersion) {
 		Wini ini = null;
 		try {
 			file.createNewFile();
 			ini = new Wini(file);
-			ini.put("Launcher", "version", classHandler.getDeclaredField("LAUNCHER_VERSION"));
+			ini.put("Launcher", "version", launcherVersion);
 			ini.put("Launcher", "login", "");
 			ini.put("Launcher", "pass", "");
 			ini.put("Game", "version", "0.0.0");
@@ -118,11 +119,23 @@ public class FileOperation {
 		catch (IOException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
 		}
-		catch (NoSuchFieldException e) {
-			logger.log(Level.SEVERE, e.toString(), e);
-		}
 		catch (SecurityException e) {
 			logger.log(Level.SEVERE, e.toString(), e);
+		}
+	}
+	
+	public static void createBOLDir() {
+		File mainDir = new File(Config.BOL_MAIN_PATH);
+		if (!mainDir.exists()) {
+			mainDir.mkdir();
+			File gameDir = new File(Config.BOL_GAME_PATH);
+			if (!gameDir.exists()) {
+				gameDir.mkdir();
+			}
+			File launcherDir = new File(Config.BOL_LAUNCHER_PATH);
+			if (!launcherDir.exists()) {
+				launcherDir.mkdir();
+			}
 		}
 	}
 }
