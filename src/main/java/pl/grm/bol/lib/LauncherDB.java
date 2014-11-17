@@ -57,4 +57,12 @@ public interface LauncherDB extends Remote {
 	 * @throws RemoteException
 	 */
 	public Player getPlayerData(String login) throws RemoteException;
+	
+	/**
+	 * Check player OP Level
+	 * 
+	 * @return int
+	 * @throws RemoteException
+	 */
+	public Result getPlayerPermissionLevel(String login) throws RemoteException;
 }
