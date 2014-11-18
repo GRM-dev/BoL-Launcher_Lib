@@ -16,4 +16,5 @@ public class Config {
 															+ "bin" + SEPARATOR + "java";
 	public static final String	USER_DIR			= System.getProperty("user.dir");
 	public static final String	LAUNCHER_PID		= FileOperation.getProcessId(USER_DIR).trim();
+	public static final String	CHECKSUMLIST		= "http://grm-dev.pl/jenkins/checkList.chk";
 }
