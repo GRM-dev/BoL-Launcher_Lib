@@ -1,2 +1,2 @@
-BoL-Launcher_Main
+BoL-Launcher Library
 =================

@@ -3,7 +3,7 @@ apply plugin: 'findbugs'
 apply plugin: 'application'
 apply plugin: 'eclipse'
 
-version = "0.0.0"
+version = "0.0.1"
 group= "pl.grm"
 
 description = 'BOL Launcher_Lib'
@@ -17,7 +17,8 @@ repositories {
 dependencies {
     compile group: 'org.ini4j', name: 'ini4j', version: 'latest.release'
   	compile 'mysql:mysql-connector-java:5.1.6'
-  	 testCompile 'junit:junit:4.11'
+  	compile files('libs/EffectProgressBar.jar')
+  	testCompile 'junit:junit:4.11'
 }
 
 findbugs {

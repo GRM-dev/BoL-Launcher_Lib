@@ -1,47 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="3.0.0" sequence="0" timestamp="1416070173181" analysisTimestamp="1416070173397" release="">
+<BugCollection version="3.0.0" sequence="0" timestamp="1416864360147" analysisTimestamp="1416864360243" release="">
   <Project projectName="">
-    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\FileOperation.class</Jar>
-    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\LauncherDB.class</Jar>
-    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\Result.class</Jar>
-    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\Player.class</Jar>
-    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\PlayerConfiguration.class</Jar>
-    <Jar>C:\Users\Bolo\git\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\Position.class</Jar>
-    <AuxClasspathEntry>C:\Users\Bolo\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.2\16561cb11c221b5928119e10d7636c95ee5c960d\ini4j-0.5.2.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Bolo\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\FileOperation.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\LauncherDB.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\package-info.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\Result.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\package-info.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\Player.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\PlayerConfiguration.java</SrcDir>
-    <SrcDir>C:\Users\Bolo\git\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\Position.java</SrcDir>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\BLog.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\Config.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\FileOperation.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\LauncherDB.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\MD5HashChecksum.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\Result.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\TypeOfProject.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\Player.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\PlayerConfiguration.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\game\Position.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\DownloadTask.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\HTTPDownloadUtil.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\UpdateFrame$1.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\UpdateFrame.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\Updater$1.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\Updater.class</Jar>
+    <Jar>N:\Kody\BoL-Launcher_Lib\build\classes\main\pl\grm\bol\lib\net\UpdaterOld.class</Jar>
+    <AuxClasspathEntry>N:\Kody\BoL-Launcher_Lib\libs\EffectProgressBar.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\&#321;ukasz\.gradle\caches\modules-2\files-2.1\org.ini4j\ini4j\0.5.2\16561cb11c221b5928119e10d7636c95ee5c960d\ini4j-0.5.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\&#321;ukasz\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar</AuxClasspathEntry>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\BLog.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\Config.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\FileOperation.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\LauncherDB.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\MD5HashChecksum.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\package-info.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\Result.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\TypeOfProject.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\package-info.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\Player.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\PlayerConfiguration.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\game\Position.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\net\DownloadTask.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\net\HTTPDownloadUtil.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\net\package-info.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\net\UpdateFrame.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\net\Updater.java</SrcDir>
+    <SrcDir>N:\Kody\BoL-Launcher_Lib\src\main\java\pl\grm\bol\lib\net\UpdaterOld.java</SrcDir>
   </Project>
-  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
-    <Class classname="pl.grm.bol.lib.FileOperation">
-      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="141" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+  <BugInstance type="IS2_INCONSISTENT_SYNC" priority="2" rank="17" abbrev="IS" category="MT_CORRECTNESS">
+    <Class classname="pl.grm.bol.lib.BLog">
+      <SourceLine classname="pl.grm.bol.lib.BLog" start="18" end="49" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java"/>
     </Class>
-    <Method classname="pl.grm.bol.lib.FileOperation" name="createIniFile" signature="(Ljava/io/File;Ljava/lang/Class;)V" isStatic="true">
-      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="118" end="141" startBytecode="0" endBytecode="413" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
-    </Method>
-    <Method classname="java.io.File" name="createNewFile" signature="()Z" isStatic="false" role="METHOD_CALLED">
-      <SourceLine classname="java.io.File" start="1007" end="1012" startBytecode="0" endBytecode="98" sourcefile="File.java" sourcepath="java/io/File.java"/>
-    </Method>
-    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="120" end="120" startBytecode="3" endBytecode="3" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    <Field classname="pl.grm.bol.lib.BLog" name="console" signature="Ljavax/swing/JTextArea;" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.BLog" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java"/>
+    </Field>
+    <Int value="66" role="INT_SYNC_PERCENT"/>
+    <SourceLine classname="pl.grm.bol.lib.BLog" start="44" end="44" startBytecode="1" endBytecode="1" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="pl.grm.bol.lib.BLog" start="48" end="48" startBytecode="2" endBytecode="2" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java" role="SOURCE_LINE_UNSYNC_ACCESS"/>
+    <SourceLine classname="pl.grm.bol.lib.BLog" start="31" end="31" startBytecode="11" endBytecode="11" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="pl.grm.bol.lib.BLog" start="32" end="32" startBytecode="18" endBytecode="18" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="pl.grm.bol.lib.BLog" start="38" end="38" startBytecode="9" endBytecode="9" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+    <SourceLine classname="pl.grm.bol.lib.BLog" start="39" end="39" startBytecode="16" endBytecode="16" sourcefile="BLog.java" sourcepath="pl/grm/bol/lib/BLog.java" role="SOURCE_LINE_SYNC_ACCESS"/>
+  </BugInstance>
+  <BugInstance type="MS_MUTABLE_ARRAY" priority="1" rank="16" abbrev="MS" category="MALICIOUS_CODE">
+    <Class classname="pl.grm.bol.lib.Config">
+      <SourceLine classname="pl.grm.bol.lib.Config" start="6" end="28" sourcefile="Config.java" sourcepath="pl/grm/bol/lib/Config.java"/>
+    </Class>
+    <Field classname="pl.grm.bol.lib.Config" name="PROGRESS_BAR_COLORS" signature="[Ljava/awt/Color;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.Config" sourcefile="Config.java" sourcepath="pl/grm/bol/lib/Config.java"/>
+    </Field>
+    <SourceLine classname="pl.grm.bol.lib.Config" start="25" end="25" startBytecode="206" endBytecode="206" sourcefile="Config.java" sourcepath="pl/grm/bol/lib/Config.java"/>
   </BugInstance>
   <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
     <Class classname="pl.grm.bol.lib.FileOperation">
-      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="141" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="140" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
     </Class>
-    <Method classname="pl.grm.bol.lib.FileOperation" name="readConfigFile" signature="(Ljava/lang/Class;)Lorg/ini4j/Wini;" isStatic="true">
-      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="80" end="94" startBytecode="0" endBytecode="252" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    <Method classname="pl.grm.bol.lib.FileOperation" name="createBOLDir" signature="()V" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="128" end="140" startBytecode="0" endBytecode="187" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
     </Method>
     <Method classname="java.io.File" name="mkdir" signature="()Z" isStatic="false" role="METHOD_CALLED">
-      <SourceLine classname="java.io.File" start="1309" end="1316" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+      <SourceLine classname="java.io.File" start="1303" end="1310" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
     </Method>
-    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="84" end="84" startBytecode="31" endBytecode="31" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="130" end="130" startBytecode="19" endBytecode="19" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="133" end="133" startBytecode="42" endBytecode="42" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="137" end="137" startBytecode="65" endBytecode="65" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java" role="SOURCE_LINE_ANOTHER_INSTANCE"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
+    <Class classname="pl.grm.bol.lib.FileOperation">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="140" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.FileOperation" name="createConfigFile" signature="(Ljava/io/File;Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="106" end="125" startBytecode="0" endBytecode="330" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Method>
+    <Method classname="java.io.File" name="createNewFile" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1001" end="1006" startBytecode="0" endBytecode="98" sourcefile="File.java" sourcepath="java/io/File.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="108" end="108" startBytecode="3" endBytecode="3" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+  </BugInstance>
+  <BugInstance type="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" priority="2" rank="16" abbrev="RV" category="BAD_PRACTICE">
+    <Class classname="pl.grm.bol.lib.FileOperation">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="16" end="140" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.FileOperation" name="readConfigFile" signature="(Ljava/lang/String;)Lorg/ini4j/Wini;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.FileOperation" start="72" end="82" startBytecode="0" endBytecode="199" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+    </Method>
+    <Method classname="java.io.File" name="mkdir" signature="()Z" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.File" start="1303" end="1310" startBytecode="0" endBytecode="91" sourcefile="File.java" sourcepath="java/io/File.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.FileOperation" start="75" end="75" startBytecode="21" endBytecode="21" sourcefile="FileOperation.java" sourcepath="pl/grm/bol/lib/FileOperation.java"/>
+  </BugInstance>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="pl.grm.bol.lib.MD5HashChecksum">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="12" end="102" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.MD5HashChecksum" name="getOriginalChecksumForFile" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="93" end="102" startBytecode="0" endBytecode="196" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Method>
+    <Method classname="java.io.InputStreamReader" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.io.InputStreamReader" start="72" end="79" startBytecode="0" endBytecode="108" sourcefile="InputStreamReader.java" sourcepath="java/io/InputStreamReader.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="94" end="94" startBytecode="22" endBytecode="22" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+  </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL">
+    <Class classname="pl.grm.bol.lib.MD5HashChecksum">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="12" end="102" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.MD5HashChecksum" name="getFileChecksum" signature="(Ljava/io/File;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="50" end="76" startBytecode="0" endBytecode="452" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Method>
+    <Class classname="java.io.InputStream" role="CLASS_REFTYPE">
+      <SourceLine classname="java.io.InputStream" start="45" end="363" sourcefile="InputStream.java" sourcepath="java/io/InputStream.java"/>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING"/>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="50" end="50" startBytecode="5" endBytecode="5" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java" role="SOURCE_LINE_OBLIGATION_CREATED"/>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="51" end="51" startBytecode="9" endBytecode="9" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="75" end="75" startBytecode="163" endBytecode="163" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="76" end="76" startBytecode="164" endBytecode="164" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <String value="{InputStream x 1}" role="STRING_REMAINING_OBLIGATIONS"/>
+  </BugInstance>
+  <BugInstance type="OS_OPEN_STREAM" priority="2" rank="16" abbrev="OS" category="BAD_PRACTICE">
+    <Class classname="pl.grm.bol.lib.MD5HashChecksum">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="12" end="102" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.MD5HashChecksum" name="getOriginalChecksumForFile" signature="(Ljava/lang/String;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="93" end="102" startBytecode="0" endBytecode="33" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Method>
+    <Type descriptor="Ljava/io/Reader;" role="TYPE_CLOSEIT">
+      <SourceLine classname="java.io.Reader" start="66" end="249" sourcefile="Reader.java" sourcepath="java/io/Reader.java"/>
+    </Type>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="94" end="94" startBytecode="10" endBytecode="10" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" rank="17" abbrev="REC" category="STYLE">
+    <Class classname="pl.grm.bol.lib.MD5HashChecksum">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="12" end="102" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.MD5HashChecksum" name="getFileChecksum" signature="(Ljava/io/File;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="50" end="76" startBytecode="0" endBytecode="452" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="75" end="75" startBytecode="163" endBytecode="163" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+  </BugInstance>
+  <BugInstance type="SBSC_USE_STRINGBUFFER_CONCATENATION" priority="2" rank="18" abbrev="SBSC" category="PERFORMANCE">
+    <Class classname="pl.grm.bol.lib.MD5HashChecksum">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="12" end="102" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.MD5HashChecksum" name="getFileChecksum" signature="(Ljava/io/File;)Ljava/lang/String;" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="50" end="76" startBytecode="0" endBytecode="452" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.MD5HashChecksum" start="66" end="66" startBytecode="79" endBytecode="79" sourcefile="MD5HashChecksum.java" sourcepath="pl/grm/bol/lib/MD5HashChecksum.java"/>
   </BugInstance>
   <BugInstance type="EI_EXPOSE_REP" priority="2" rank="18" abbrev="EI" category="MALICIOUS_CODE">
     <Class classname="pl.grm.bol.lib.Result">
@@ -68,27 +187,106 @@
     <LocalVariable name="resultIntArray" register="1" pc="2" role="LOCAL_VARIABLE_NAMED"/>
     <SourceLine classname="pl.grm.bol.lib.Result" start="82" end="82" startBytecode="2" endBytecode="2" sourcefile="Result.java" sourcepath="pl/grm/bol/lib/Result.java"/>
   </BugInstance>
+  <BugInstance type="OBL_UNSATISFIED_OBLIGATION_EXCEPTION_EDGE" priority="2" rank="20" abbrev="OBL" category="EXPERIMENTAL">
+    <Class classname="pl.grm.bol.lib.net.DownloadTask">
+      <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="14" end="72" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.net.DownloadTask" name="doInBackground" signature="()Ljava/lang/Void;" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="33" end="60" startBytecode="0" endBytecode="504" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java"/>
+    </Method>
+    <Class classname="java.io.OutputStream" role="CLASS_REFTYPE">
+      <SourceLine classname="java.io.OutputStream" start="46" end="152" sourcefile="OutputStream.java" sourcepath="java/io/OutputStream.java"/>
+    </Class>
+    <Int value="1" role="INT_OBLIGATIONS_REMAINING"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="38" end="38" startBytecode="65" endBytecode="65" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_OBLIGATION_CREATED"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="39" end="39" startBytecode="70" endBytecode="70" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="40" end="40" startBytecode="77" endBytecode="77" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="41" end="41" startBytecode="80" endBytecode="80" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="42" end="42" startBytecode="83" endBytecode="83" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="43" end="43" startBytecode="86" endBytecode="86" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="44" end="44" startBytecode="93" endBytecode="93" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="53" end="53" startBytecode="157" endBytecode="157" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="54" end="54" startBytecode="158" endBytecode="158" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="56" end="56" startBytecode="190" endBytecode="190" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="57" end="57" startBytecode="194" endBytecode="194" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="58" end="58" startBytecode="199" endBytecode="199" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="60" end="60" startBytecode="205" endBytecode="205" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java" role="SOURCE_LINE_PATH_CONTINUES"/>
+    <String value="{OutputStream x 1}" role="STRING_REMAINING_OBLIGATIONS"/>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_FIELD" priority="2" rank="18" abbrev="UrF" category="PERFORMANCE">
+    <Class classname="pl.grm.bol.lib.net.DownloadTask">
+      <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="14" end="72" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java"/>
+    </Class>
+    <Field classname="pl.grm.bol.lib.net.DownloadTask" name="fileSize" signature="I" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java"/>
+    </Field>
+    <SourceLine classname="pl.grm.bol.lib.net.DownloadTask" start="24" end="24" startBytecode="23" endBytecode="23" sourcefile="DownloadTask.java" sourcepath="pl/grm/bol/lib/net/DownloadTask.java"/>
+  </BugInstance>
+  <BugInstance type="DM_EXIT" priority="2" rank="16" abbrev="Dm" category="BAD_PRACTICE">
+    <Class classname="pl.grm.bol.lib.net.Updater">
+      <SourceLine classname="pl.grm.bol.lib.net.Updater" start="24" end="184" sourcefile="Updater.java" sourcepath="pl/grm/bol/lib/net/Updater.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.net.Updater" name="done" signature="()V" isStatic="false">
+      <SourceLine classname="pl.grm.bol.lib.net.Updater" start="86" end="97" startBytecode="0" endBytecode="193" sourcefile="Updater.java" sourcepath="pl/grm/bol/lib/net/Updater.java"/>
+    </Method>
+    <SourceLine classname="pl.grm.bol.lib.net.Updater" start="88" end="88" startBytecode="20" endBytecode="20" sourcefile="Updater.java" sourcepath="pl/grm/bol/lib/net/Updater.java"/>
+  </BugInstance>
+  <BugInstance type="BC_UNCONFIRMED_CAST" priority="2" rank="17" abbrev="BC" category="STYLE">
+    <Class classname="pl.grm.bol.lib.net.UpdaterOld">
+      <SourceLine classname="pl.grm.bol.lib.net.UpdaterOld" start="23" end="146" sourcefile="UpdaterOld.java" sourcepath="pl/grm/bol/lib/net/UpdaterOld.java"/>
+    </Class>
+    <Method classname="pl.grm.bol.lib.net.UpdaterOld" name="updateLauncher" signature="(Ljavax/swing/JFrame;)V" isStatic="true">
+      <SourceLine classname="pl.grm.bol.lib.net.UpdaterOld" start="31" end="53" startBytecode="0" endBytecode="57" sourcefile="UpdaterOld.java" sourcepath="pl/grm/bol/lib/net/UpdaterOld.java"/>
+    </Method>
+    <Type descriptor="Ljavax/swing/JFrame;" role="TYPE_FOUND">
+      <SourceLine classname="javax.swing.JFrame" start="133" end="889" sourcefile="JFrame.java" sourcepath="javax/swing/JFrame.java"/>
+    </Type>
+    <Type descriptor="Lpl/grm/bol/lib/net/UpdateFrame;" role="TYPE_EXPECTED">
+      <SourceLine classname="pl.grm.bol.lib.net.UpdateFrame" start="28" end="144" sourcefile="UpdateFrame.java" sourcepath="pl/grm/bol/lib/net/UpdateFrame.java"/>
+    </Type>
+    <LocalVariable name="frame" register="0" pc="0" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="pl.grm.bol.lib.net.UpdaterOld" start="31" end="31" startBytecode="1" endBytecode="1" sourcefile="UpdaterOld.java" sourcepath="pl/grm/bol/lib/net/UpdaterOld.java"/>
+  </BugInstance>
   <Errors errors="0" missingClasses="0"></Errors>
-  <FindBugsSummary timestamp="Sat, 15 Nov 2014 17:49:33 +0100" total_classes="6" referenced_classes="45" total_bugs="4" total_size="231" num_packages="2" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="7.04" clock_seconds="6.18" peak_mbytes="115.46" alloc_mbytes="910.50" gc_seconds="0.18" priority_2="4">
-    <PackageStats package="pl.grm.bol.lib" total_bugs="4" total_types="3" total_size="150" priority_2="4">
-      <ClassStats class="pl.grm.bol.lib.FileOperation" sourceFile="FileOperation.java" interface="false" size="87" bugs="2" priority_2="2"/>
-      <ClassStats class="pl.grm.bol.lib.LauncherDB" sourceFile="LauncherDB.java" interface="true" size="6" bugs="0"/>
+  <FindBugsSummary timestamp="Mon, 24 Nov 2014 22:26:00 +0100" total_classes="17" referenced_classes="361" total_bugs="16" total_size="723" num_packages="3" java_version="1.7.0_51" vm_version="24.51-b03" cpu_seconds="11.73" clock_seconds="4.34" peak_mbytes="187.55" alloc_mbytes="3616.00" gc_seconds="0.07" priority_2="14" priority_1="2">
+    <PackageStats package="pl.grm.bol.lib" total_bugs="12" total_types="7" total_size="282" priority_2="10" priority_1="2">
+      <ClassStats class="pl.grm.bol.lib.BLog" sourceFile="BLog.java" interface="false" size="27" bugs="1" priority_2="1"/>
+      <ClassStats class="pl.grm.bol.lib.Config" sourceFile="Config.java" interface="false" size="31" bugs="1" priority_1="1"/>
+      <ClassStats class="pl.grm.bol.lib.FileOperation" sourceFile="FileOperation.java" interface="false" size="90" bugs="3" priority_2="3"/>
+      <ClassStats class="pl.grm.bol.lib.LauncherDB" sourceFile="LauncherDB.java" interface="true" size="7" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.MD5HashChecksum" sourceFile="MD5HashChecksum.java" interface="false" size="45" bugs="5" priority_2="4" priority_1="1"/>
       <ClassStats class="pl.grm.bol.lib.Result" sourceFile="Result.java" interface="false" size="57" bugs="2" priority_2="2"/>
+      <ClassStats class="pl.grm.bol.lib.TypeOfProject" sourceFile="TypeOfProject.java" interface="false" size="25" bugs="0"/>
     </PackageStats>
     <PackageStats package="pl.grm.bol.lib.game" total_bugs="0" total_types="3" total_size="81">
       <ClassStats class="pl.grm.bol.lib.game.Player" sourceFile="Player.java" interface="false" size="33" bugs="0"/>
       <ClassStats class="pl.grm.bol.lib.game.PlayerConfiguration" sourceFile="PlayerConfiguration.java" interface="false" size="3" bugs="0"/>
       <ClassStats class="pl.grm.bol.lib.game.Position" sourceFile="Position.java" interface="false" size="45" bugs="0"/>
     </PackageStats>
+    <PackageStats package="pl.grm.bol.lib.net" total_bugs="4" total_types="7" total_size="360" priority_2="4">
+      <ClassStats class="pl.grm.bol.lib.net.DownloadTask" sourceFile="DownloadTask.java" interface="false" size="45" bugs="2" priority_2="2"/>
+      <ClassStats class="pl.grm.bol.lib.net.HTTPDownloadUtil" sourceFile="HTTPDownloadUtil.java" interface="false" size="39" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.net.UpdateFrame" sourceFile="UpdateFrame.java" interface="false" size="82" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.net.UpdateFrame$1" sourceFile="UpdateFrame.java" interface="false" size="8" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.net.Updater" sourceFile="Updater.java" interface="false" size="101" bugs="1" priority_2="1"/>
+      <ClassStats class="pl.grm.bol.lib.net.Updater$1" sourceFile="Updater.java" interface="false" size="4" bugs="0"/>
+      <ClassStats class="pl.grm.bol.lib.net.UpdaterOld" sourceFile="UpdaterOld.java" interface="false" size="81" bugs="1" priority_2="1"/>
+    </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1358" invocations="477" avgMicrosecondsPerInvocation="2847" maxMicrosecondsPerInvocation="272282" standardDeviationMircosecondsPerInvocation="15909"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="651" invocations="476" avgMicrosecondsPerInvocation="1368" maxMicrosecondsPerInvocation="86768" standardDeviationMircosecondsPerInvocation="6338"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="397" invocations="6" avgMicrosecondsPerInvocation="66285" maxMicrosecondsPerInvocation="294440" standardDeviationMircosecondsPerInvocation="108585"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="290" invocations="58" avgMicrosecondsPerInvocation="5005" maxMicrosecondsPerInvocation="278040" standardDeviationMircosecondsPerInvocation="36167"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="205" invocations="45" avgMicrosecondsPerInvocation="4562" maxMicrosecondsPerInvocation="110815" standardDeviationMircosecondsPerInvocation="16317"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="175" invocations="440" avgMicrosecondsPerInvocation="399" maxMicrosecondsPerInvocation="103043" standardDeviationMircosecondsPerInvocation="4932"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="122" invocations="55" avgMicrosecondsPerInvocation="2218" maxMicrosecondsPerInvocation="49584" standardDeviationMircosecondsPerInvocation="8025"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="94" invocations="53" avgMicrosecondsPerInvocation="1775" maxMicrosecondsPerInvocation="69392" standardDeviationMircosecondsPerInvocation="9432"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="756" invocations="1580" avgMicrosecondsPerInvocation="479" maxMicrosecondsPerInvocation="19228" standardDeviationMircosecondsPerInvocation="1381"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="490" invocations="361" avgMicrosecondsPerInvocation="1359" maxMicrosecondsPerInvocation="44133" standardDeviationMircosecondsPerInvocation="3911"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="316" invocations="769" avgMicrosecondsPerInvocation="411" maxMicrosecondsPerInvocation="19611" standardDeviationMircosecondsPerInvocation="1014"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="311" invocations="1585" avgMicrosecondsPerInvocation="196" maxMicrosecondsPerInvocation="11617" standardDeviationMircosecondsPerInvocation="876"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="155" invocations="361" avgMicrosecondsPerInvocation="430" maxMicrosecondsPerInvocation="28635" standardDeviationMircosecondsPerInvocation="1703"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="131" invocations="361" avgMicrosecondsPerInvocation="363" maxMicrosecondsPerInvocation="14766" standardDeviationMircosecondsPerInvocation="1026"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="102" invocations="361" avgMicrosecondsPerInvocation="284" maxMicrosecondsPerInvocation="22074" standardDeviationMircosecondsPerInvocation="1934"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="96" invocations="420" avgMicrosecondsPerInvocation="230" maxMicrosecondsPerInvocation="12886" standardDeviationMircosecondsPerInvocation="816"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="94" invocations="1528" avgMicrosecondsPerInvocation="61" maxMicrosecondsPerInvocation="2594" standardDeviationMircosecondsPerInvocation="145"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="90" invocations="113" avgMicrosecondsPerInvocation="802" maxMicrosecondsPerInvocation="13166" standardDeviationMircosecondsPerInvocation="1616"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="89" invocations="111" avgMicrosecondsPerInvocation="806" maxMicrosecondsPerInvocation="6265" standardDeviationMircosecondsPerInvocation="1254"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="88" invocations="361" avgMicrosecondsPerInvocation="244" maxMicrosecondsPerInvocation="9067" standardDeviationMircosecondsPerInvocation="720"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="84" invocations="123" avgMicrosecondsPerInvocation="690" maxMicrosecondsPerInvocation="7582" standardDeviationMircosecondsPerInvocation="1198"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="83" invocations="361" avgMicrosecondsPerInvocation="230" maxMicrosecondsPerInvocation="4510" standardDeviationMircosecondsPerInvocation="572"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

@@ -86,6 +86,10 @@ public class MD5HashChecksum {
 	 */
 	public static String getOriginalChecksumForFile(File file) throws IOException {
 		String fileName = file.getName();
+		return getOriginalChecksumForFile(fileName);
+	}
+	
+	public static String getOriginalChecksumForFile(String fileName) throws IOException {
 		URL webFile = new URL(CHECKSUMLIST);
 		BufferedReader in = new BufferedReader(new InputStreamReader(webFile.openStream()));
 		String inputLine;
