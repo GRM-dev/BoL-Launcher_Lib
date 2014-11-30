@@ -39,7 +39,7 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 	 */
 	public UpdateFrame(String title, TypeOfProject updater) {
 		super(title);
-		this.setRunningType(updater);
+		setRunningType(updater);
 		setLAF();
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		setPreferredSize(setupBounds());
@@ -82,6 +82,7 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 		}
 	}
 	
+	/** setLookAndFeel */
 	private static void setLAF() {
 		try {
 			UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");

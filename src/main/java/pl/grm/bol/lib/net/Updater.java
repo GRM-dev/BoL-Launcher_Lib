@@ -23,14 +23,13 @@ import pl.grm.bol.lib.TypeOfProject;
 
 public class Updater extends SwingWorker<Boolean, Void> {
 	private String			pathToFile	= "";
-	private int				fileSize;
 	private UpdateFrame		frame;
-	private Logger			logger;
+	private static Logger	logger;
 	private TypeOfProject	runType;
 	
 	public Updater(UpdateFrame frameT) {
 		frame = frameT;
-		logger = FileOperation.setupLogger("Updater.log");
+		logger = FileOperation.setupLogger("updater.log");
 		runType = frame.getRunningType();
 	}
 	
@@ -39,15 +38,18 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		try {
 			switch (runType) {
 				case LAUNCHER :
+					logger.info("Updating Updater");
 					updateUpdater();
 					break;
 				case UPDATER :
+					logger.info("Updating Launcher");
 					updateLauncher();
 					break;
 				default :
+					logger.info("Bad RunType!");
 					break;
 			}
-			return false;
+			return true;
 		}
 		catch (Exception ex) {
 			frame.getProgressBar().setValue(0);
@@ -56,30 +58,6 @@ public class Updater extends SwingWorker<Boolean, Void> {
 					"Error", JOptionPane.ERROR_MESSAGE);
 		}
 		return false;
-	}
-	
-	private void updateUpdater() throws InvalidFileFormatException, IOException {
-		String fileName = checkoutUpdaterVersion();
-		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
-		if (!correctFileExists(fileName)) {
-			downloadFile();
-		}
-		startProcess(Config.DIRECTORY_MAIN, fileName);
-	}
-	
-	private void updateLauncher() throws InvalidFileFormatException, IOException {
-		String fileName = checkoutLauncherVersion();
-		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
-		if (!correctFileExists(fileName)) {
-			downloadFile();
-		}
-		startProcess(Config.DIRECTORY_MAIN, fileName);
-	}
-	
-	private void downloadFile() {
-		DownloadTask task = new DownloadTask(frame, pathToFile, fileSize);
-		task.addPropertyChangeListener(frame);
-		task.execute();
 	}
 	
 	@Override
@@ -98,27 +76,65 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		}
 	}
 	
+	private void updateUpdater() throws InvalidFileFormatException, IOException {
+		String fileName = checkoutUpdaterVersion();
+		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
+		if (!correctFileExists(fileName)) {
+			logger.info("Downloading Updater " + pathToFile);
+			downloadFile();
+		}
+		startProcess(fileName);
+	}
+	
+	private void updateLauncher() throws InvalidFileFormatException, IOException {
+		String fileName = checkoutLauncherVersion();
+		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
+		logger.info("Downloading Launcher " + pathToFile);
+		if (!correctFileExists(fileName)) {
+			downloadFile();
+		}
+		startProcess(fileName);
+	}
+	
 	/**
-	 * Check version of launcher on the web server.
+	 * Download file in new task
+	 */
+	private void downloadFile() {
+		DownloadTask task = new DownloadTask(frame, pathToFile);
+		task.addPropertyChangeListener(frame);
+		task.execute();
+	}
+	
+	/**
+	 * Check version of updater on the web server.
 	 * 
-	 * @return fileName
+	 * @return fileName the name of file for current release and last version
 	 * @throws IOException
 	 * @throws InvalidFileFormatException
 	 */
-	private String checkoutUpdaterVersion() throws InvalidFileFormatException, IOException {
+	private static String checkoutUpdaterVersion() throws InvalidFileFormatException, IOException {
 		Ini sIni = new Ini();
 		URL url = new URL(Config.SERVER_VERSION_LINK);
 		sIni.load(url);
 		String version = sIni.get("Updater", "last_version");
+		logger.info("Wersja: " + version);
 		String fileName = TypeOfProject.UPDATER.getFileNamePrefix() + version + Config.RELEASE_TYPE;
 		return fileName;
 	}
 	
-	private String checkoutLauncherVersion() throws InvalidFileFormatException, IOException {
+	/**
+	 * Check version of launcher on the web server.
+	 * 
+	 * @return fileName the name of file for current release and last version
+	 * @throws IOException
+	 * @throws InvalidFileFormatException
+	 */
+	private static String checkoutLauncherVersion() throws InvalidFileFormatException, IOException {
 		Ini sIni = new Ini();
 		URL url = new URL(Config.SERVER_VERSION_LINK);
 		sIni.load(url);
 		String version = sIni.get("Launcher", "last_version");
+		logger.info("Wersja: " + version);
 		String fileName = TypeOfProject.LAUNCHER.getFileNamePrefix() + version
 				+ Config.RELEASE_TYPE;
 		return fileName;
@@ -166,14 +182,14 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		return false;
 	}
 	
-	private boolean startProcess(File confDir, String fileName) {
+	private boolean startProcess(String fileName) {
 		logger.info("Starting Process...");
 		String launcherJarAbsPath;
 		try {
-			launcherJarAbsPath = FileOperation.getCurrentJarPath(UpdaterOld.class);
+			launcherJarAbsPath = FileOperation.getCurrentJarPath(Updater.class);
 			ProcessBuilder processBuilder = new ProcessBuilder(Config.JAVA_PATH, "-jar",
 					Config.BOL_MAIN_PATH + fileName, launcherJarAbsPath, Config.LAUNCHER_PID);
-			processBuilder.directory(confDir);
+			processBuilder.directory(Config.DIRECTORY_MAIN);
 			processBuilder.start();
 			return true;
 		}

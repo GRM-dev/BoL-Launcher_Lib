@@ -3,16 +3,17 @@ package pl.grm.bol.lib;
 import java.io.Serializable;
 
 public class Result implements Serializable {
+	private static final long	serialVersionUID	= 1L;
 	/** Type of query listed in LauncherDB starting from 1 */
-	private byte		RESULT_TYPE	= 0;
-	private Exception	exception;
-	private String		resultString;
-	private int			resultInt;
-	private long		resultLong;
-	private float		resultFloat;
-	private double		resutDouble;
-	private boolean		resultBoolean;
-	private int[]		resultIntArray;
+	private byte				RESULT_TYPE			= 0;
+	private Exception			exception;
+	private String				resultString;
+	private int					resultInt;
+	private long				resultLong;
+	private float				resultFloat;
+	private double				resutDouble;
+	private boolean				resultBoolean;
+	private int[]				resultIntArray;
 	
 	public Result(int i) {
 		this.RESULT_TYPE = Byte.parseByte(Integer.toString(i));

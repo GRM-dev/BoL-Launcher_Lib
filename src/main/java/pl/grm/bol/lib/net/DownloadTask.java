@@ -16,12 +16,11 @@ public class DownloadTask extends SwingWorker<Void, Void> {
 	private String				downloadURL;
 	private String				saveDirectory	= Config.BOL_MAIN_PATH;
 	private JFrame				gui;
-	private int					fileSize;
+	private long				fileSize		= 0;
 	
-	public DownloadTask(JFrame gui, String downloadURL, int fileSize) {
+	public DownloadTask(JFrame gui, String downloadURL) {
 		this.gui = gui;
 		this.downloadURL = downloadURL;
-		this.fileSize = fileSize;
 	}
 	
 	/**
@@ -40,7 +39,7 @@ public class DownloadTask extends SwingWorker<Void, Void> {
 			int bytesRead = -1;
 			long totalBytesRead = 0;
 			int percentCompleted = 0;
-			long fileSize = util.getContentLength();
+			fileSize = util.getContentLength();
 			while ((bytesRead = inputStream.read(buffer)) != -1) {
 				outputStream.write(buffer, 0, bytesRead);
 				totalBytesRead += bytesRead;
@@ -66,8 +65,8 @@ public class DownloadTask extends SwingWorker<Void, Void> {
 	@Override
 	protected void done() {
 		if (!isCancelled()) {
-			JOptionPane.showMessageDialog(gui, "File has been downloaded successfully!", "Message",
-					JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(gui, "Update has been downloaded successfully!",
+					"Update Message", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 }
