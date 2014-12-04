@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 
+import pl.grm.bol.lib.BLog;
 import pl.grm.bol.lib.Config;
 import pl.grm.bol.lib.TypeOfProject;
 import Effect.BarConstant;
@@ -30,6 +31,21 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 	private JProgressBar		progressBar;
 	private EffectProgressBarUI	barUI;
 	private TypeOfProject		runningType;
+	public Object				obj;
+	private BLog				logger;
+	
+	/**
+	 * @param title
+	 *            Title of updater window
+	 * @param updater
+	 *            Type Of Project which started updater
+	 * @param logger
+	 *            BLog type of logger from upper object
+	 */
+	public UpdateFrame(String title, TypeOfProject updater, BLog logger) {
+		this(title, updater);
+		this.logger = logger;
+	}
 	
 	/**
 	 * @param title
@@ -51,6 +67,7 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 		getContentPane().add(labelProgress, BorderLayout.WEST);
 		createProgressBar();
 		getContentPane().add(progressBar);
+		buttonUpdate.setEnabled(false);
 		buttonUpdate.setMnemonic('u');
 		buttonUpdate.setFont(buttonUpdate.getFont().deriveFont(
 				buttonUpdate.getFont().getStyle() | Font.BOLD));
@@ -64,8 +81,7 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 		buttonUpdate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
-				Updater worker = new Updater(UpdateFrame.this);
-				worker.execute();
+				startUpdate();
 			}
 		});
 	}
@@ -132,6 +148,16 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 		return dim;
 	}
 	
+	private void startUpdate() {
+		Updater worker;
+		if (logger != null) {
+			worker = new Updater(UpdateFrame.this, logger);
+		} else {
+			worker = new Updater(UpdateFrame.this);
+		}
+		worker.execute();
+	}
+	
 	public JProgressBar getProgressBar() {
 		return progressBar;
 	}
@@ -142,5 +168,13 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 	
 	public void setRunningType(TypeOfProject updater) {
 		this.runningType = updater;
+	}
+	
+	public JButton getButtonUpdate() {
+		return this.buttonUpdate;
+	}
+	
+	public void setUpdaterObj(Class<?> class1) {
+		obj = class1;
 	}
 }

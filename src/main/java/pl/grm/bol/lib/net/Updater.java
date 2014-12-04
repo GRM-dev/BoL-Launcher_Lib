@@ -4,11 +4,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 import javax.swing.SwingWorker;
@@ -16,20 +16,27 @@ import javax.swing.SwingWorker;
 import org.ini4j.Ini;
 import org.ini4j.InvalidFileFormatException;
 
+import pl.grm.bol.lib.BLog;
 import pl.grm.bol.lib.Config;
 import pl.grm.bol.lib.FileOperation;
-import pl.grm.bol.lib.MD5HashChecksum;
 import pl.grm.bol.lib.TypeOfProject;
 
 public class Updater extends SwingWorker<Boolean, Void> {
 	private String			pathToFile	= "";
 	private UpdateFrame		frame;
-	private static Logger	logger;
+	private static BLog		logger;
+	private static String	version;
 	private TypeOfProject	runType;
 	
 	public Updater(UpdateFrame frameT) {
 		frame = frameT;
-		logger = FileOperation.setupLogger("updater.log");
+		logger = new BLog("updater.log");
+		runType = frame.getRunningType();
+	}
+	
+	public Updater(UpdateFrame frameT, BLog logger) {
+		Updater.logger = logger;
+		frame = frameT;
 		runType = frame.getRunningType();
 	}
 	
@@ -38,7 +45,7 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		try {
 			switch (runType) {
 				case LAUNCHER :
-					logger.info("Updating Updater");
+					logger.info("Preparing Updater");
 					updateUpdater();
 					break;
 				case UPDATER :
@@ -76,33 +83,42 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		}
 	}
 	
-	private void updateUpdater() throws InvalidFileFormatException, IOException {
+	private void updateUpdater() throws Exception {
 		String fileName = checkoutUpdaterVersion();
-		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
-		if (!correctFileExists(fileName)) {
-			logger.info("Downloading Updater " + pathToFile);
-			downloadFile();
-		}
-		startProcess(fileName);
+		downloadTask(fileName);
 	}
 	
-	private void updateLauncher() throws InvalidFileFormatException, IOException {
+	private void updateLauncher() throws Exception {
+		Class<?> LauncherUpdater = Class.forName("pl.grm.updater.LauncherUpdater");
+		Class[] cArg = new Class[1];
+		cArg[0] = String.class;
+		Method saveUpdatedLauncherMethod = LauncherUpdater.getDeclaredMethod("saveUpdatedLauncher",
+				cArg);
 		String fileName = checkoutLauncherVersion();
-		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
-		logger.info("Downloading Launcher " + pathToFile);
-		if (!correctFileExists(fileName)) {
-			downloadFile();
-		}
-		startProcess(fileName);
+		downloadTask(fileName);
+		saveUpdatedLauncherMethod.invoke(frame.obj, new String(version));
 	}
 	
 	/**
 	 * Download file in new task
 	 */
-	private void downloadFile() {
-		DownloadTask task = new DownloadTask(frame, pathToFile);
-		task.addPropertyChangeListener(frame);
-		task.execute();
+	private void downloadTask(String fileName) throws Exception {
+		pathToFile = Config.SERVER_DOWNLOAD_LINK + fileName;
+		int attempt = 0;
+		DownloadTask task;
+		while (!correctFileExists(fileName)) {
+			if (attempt < 5) {
+				attempt++;
+				logger.info("Downloading " + runType.getProjectName() + ": " + pathToFile
+						+ "\nAttempt:" + attempt);
+				task = new DownloadTask(frame, pathToFile);
+				task.addPropertyChangeListener(frame);
+				task.execute();
+			} else {
+				throw new Exception("Cannot download correct file!");
+			}
+		}
+		startProcess(fileName);
 	}
 	
 	/**
@@ -133,7 +149,7 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		Ini sIni = new Ini();
 		URL url = new URL(Config.SERVER_VERSION_LINK);
 		sIni.load(url);
-		String version = sIni.get("Launcher", "last_version");
+		version = sIni.get("Launcher", "last_version");
 		logger.info("Wersja: " + version);
 		String fileName = TypeOfProject.LAUNCHER.getFileNamePrefix() + version
 				+ Config.RELEASE_TYPE;
@@ -169,20 +185,21 @@ public class Updater extends SwingWorker<Boolean, Void> {
 	 * 
 	 * @return true if correct file already exists on computer
 	 */
-	private boolean correctFileExists(String fileName) {
+	private static boolean correctFileExists(String fileName) {
 		File file = new File(Config.BOL_MAIN_PATH + fileName);
 		if (file.exists()) {
-			try {
-				return MD5HashChecksum.isFileCorrect(new File(fileName));
-			}
-			catch (IOException e) {
-				logger.log(Level.SEVERE, e.toString(), e);
-			}
+			logger.info("File exists. Checking if correct ...");
+			// try {
+			return true;// MD5HashChecksum.isFileCorrect(new File(fileName));
+			// }
+			// catch (IOException e) {
+			// logger.log(Level.SEVERE, e.toString(), e);
+			// }
 		}
 		return false;
 	}
 	
-	private boolean startProcess(String fileName) {
+	private static boolean startProcess(String fileName) {
 		logger.info("Starting Process...");
 		String launcherJarAbsPath;
 		try {
