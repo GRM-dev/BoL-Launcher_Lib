@@ -17,6 +17,7 @@ import org.ini4j.InvalidFileFormatException;
 import pl.grm.bol.lib.BLog;
 import pl.grm.bol.lib.Config;
 import pl.grm.bol.lib.FileOperation;
+import pl.grm.bol.lib.MD5HashChecksum;
 import pl.grm.bol.lib.TypeOfProject;
 
 public class Updater extends SwingWorker<Boolean, Void> {
@@ -177,12 +178,12 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		File file = new File(Config.BOL_MAIN_PATH + fileName);
 		if (file.exists()) {
 			logger.info("File exists. Checking if correct ...");
-			// try {
-			return true;// MD5HashChecksum.isFileCorrect(new File(fileName));
-			// }
-			// catch (IOException e) {
-			// logger.log(Level.SEVERE, e.toString(), e);
-			// }
+			try {
+				return MD5HashChecksum.isFileCorrect(new File(fileName));
+			}
+			catch (IOException e) {
+				logger.log(Level.SEVERE, e.toString(), e);
+			}
 		}
 		return false;
 	}
