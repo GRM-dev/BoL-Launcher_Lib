@@ -2,11 +2,9 @@ package pl.grm.bol.lib.net;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Method;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 
@@ -29,9 +27,7 @@ public class Updater extends SwingWorker<Boolean, Void> {
 	private TypeOfProject	runType;
 	
 	public Updater(UpdateFrame frameT) {
-		frame = frameT;
-		logger = new BLog("updater.log");
-		runType = frame.getRunningType();
+		this(frameT, new BLog("pre-updater.log"));
 	}
 	
 	public Updater(UpdateFrame frameT, BLog logger) {
@@ -61,8 +57,9 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		catch (Exception ex) {
 			frame.getProgressBar().setValue(0);
 			logger.log(Level.SEVERE, ex.toString(), ex);
-			JOptionPane.showMessageDialog(frame, "Error executing upload task: " + ex.getMessage(),
-					"Error", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(frame,
+					"Error while downloading file in task: " + ex.getMessage(), "Error",
+					JOptionPane.ERROR_MESSAGE);
 		}
 		return false;
 	}
@@ -89,8 +86,8 @@ public class Updater extends SwingWorker<Boolean, Void> {
 	}
 	
 	private void updateLauncher() throws Exception {
-		Class<?> LauncherUpdater = Class.forName("pl.grm.updater.LauncherUpdater");
-		Class[] cArg = new Class[1];
+		Class<?> LauncherUpdater = Class.forName("pl.grm.bol.updater.LauncherUpdater");
+		Class<?>[] cArg = new Class[1];
 		cArg[0] = String.class;
 		Method saveUpdatedLauncherMethod = LauncherUpdater.getDeclaredMethod("saveUpdatedLauncher",
 				cArg);
@@ -111,14 +108,29 @@ public class Updater extends SwingWorker<Boolean, Void> {
 				attempt++;
 				logger.info("Downloading " + runType.getProjectName() + ": " + pathToFile
 						+ "\nAttempt:" + attempt);
-				task = new DownloadTask(frame, pathToFile);
+				task = new DownloadTask(this, frame, pathToFile);
 				task.addPropertyChangeListener(frame);
 				task.execute();
+				waitForDownload();
 			} else {
 				throw new Exception("Cannot download correct file!");
 			}
 		}
+		frame.getProgressBar().setValue(100);
 		startProcess(fileName);
+	}
+	
+	private synchronized void waitForDownload() {
+		try {
+			wait(60000L);
+		}
+		catch (InterruptedException e) {
+			logger.log(Level.SEVERE, e.toString(), e);
+		}
+	}
+	
+	public synchronized void notifyUpdater() {
+		notifyAll();
 	}
 	
 	/**
@@ -157,30 +169,6 @@ public class Updater extends SwingWorker<Boolean, Void> {
 	}
 	
 	/**
-	 * Kills specified process of Launcher
-	 * 
-	 * @param processStringPID
-	 * @return list Of Process
-	 * @throws IOException
-	 */
-	public static ArrayList<String> killExec(String processStringPID) throws IOException {
-		String outStr = "";
-		ArrayList<String> processOutList = new ArrayList<String>();
-		int i = -1;
-		Process p = Runtime.getRuntime().exec(processStringPID);
-		InputStream in = p.getInputStream();
-		x11 : while ((i = in.read()) != -1) {
-			if ((char) i == '\n') {
-				processOutList.add((outStr));
-				outStr = "";
-				continue x11;
-			}
-			outStr += (char) i;
-		}
-		return processOutList;
-	}
-	
-	/**
 	 * If file exists than check checksum
 	 * 
 	 * @return true if correct file already exists on computer
@@ -205,7 +193,8 @@ public class Updater extends SwingWorker<Boolean, Void> {
 		try {
 			launcherJarAbsPath = FileOperation.getCurrentJarPath(Updater.class);
 			ProcessBuilder processBuilder = new ProcessBuilder(Config.JAVA_PATH, "-jar",
-					Config.BOL_MAIN_PATH + fileName, launcherJarAbsPath, Config.LAUNCHER_PID);
+					Config.BOL_MAIN_PATH + fileName, launcherJarAbsPath, Config.LAUNCHER_PID,
+					Config.USER_DIR);
 			processBuilder.directory(Config.DIRECTORY_MAIN);
 			processBuilder.start();
 			return true;

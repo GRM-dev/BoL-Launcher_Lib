@@ -17,8 +17,10 @@ public class DownloadTask extends SwingWorker<Void, Void> {
 	private String				saveDirectory	= Config.BOL_MAIN_PATH;
 	private JFrame				gui;
 	private long				fileSize		= 0;
+	private Updater				updater;
 	
-	public DownloadTask(JFrame gui, String downloadURL) {
+	public DownloadTask(Updater updater, JFrame gui, String downloadURL) {
+		this.updater = updater;
 		this.gui = gui;
 		this.downloadURL = downloadURL;
 	}
@@ -68,5 +70,6 @@ public class DownloadTask extends SwingWorker<Void, Void> {
 			JOptionPane.showMessageDialog(gui, "Update has been downloaded successfully!",
 					"Update Message", JOptionPane.INFORMATION_MESSAGE);
 		}
+		updater.notifyUpdater();
 	}
 }

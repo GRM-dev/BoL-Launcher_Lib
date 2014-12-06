@@ -14,7 +14,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 import pl.grm.bol.lib.BLog;
@@ -28,6 +30,8 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 	private static final long	serialVersionUID	= 1L;
 	private JButton				buttonUpdate		= new JButton("Update");
 	private JLabel				labelProgress		= new JLabel("Progress:");
+	private JLabel				topLabel			= new JLabel();
+	private JPanel				buttonPanel			= new JPanel();
 	private JProgressBar		progressBar;
 	private EffectProgressBarUI	barUI;
 	private TypeOfProject		runningType;
@@ -52,6 +56,7 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 	 *            Title of updater window
 	 * @param updater
 	 *            Type Of Project which started updater
+	 * @wbp.parser.constructor
 	 */
 	public UpdateFrame(String title, TypeOfProject updater) {
 		super(title);
@@ -59,7 +64,7 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 		setLAF();
 		getContentPane().setLayout(new BorderLayout(0, 0));
 		setPreferredSize(setupBounds());
-		labelProgress.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		labelProgress.setFont(new Font("Tahoma", Font.BOLD, 15));
 		labelProgress.setForeground(Color.LIGHT_GRAY);
 		labelProgress.setBackground(Color.DARK_GRAY);
 		labelProgress.setOpaque(true);
@@ -67,23 +72,39 @@ public class UpdateFrame extends JFrame implements PropertyChangeListener {
 		getContentPane().add(labelProgress, BorderLayout.WEST);
 		createProgressBar();
 		getContentPane().add(progressBar);
+		topLabel.setForeground(Color.WHITE);
+		topLabel.setBackground(Color.DARK_GRAY);
+		topLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		topLabel.setOpaque(true);
+		topLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		String text = "";
+		if (runningType == TypeOfProject.LAUNCHER)
+			text = TypeOfProject.UPDATER.getProjectName();
+		else if (runningType == TypeOfProject.UPDATER) {
+			text = TypeOfProject.LAUNCHER.getProjectName();
+		}
+		topLabel.setText("Downloading " + text);
+		getContentPane().add(topLabel, BorderLayout.NORTH);
+		buttonPanel.setBackground(Color.DARK_GRAY);
+		buttonPanel.setOpaque(true);
+		getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+		buttonPanel.add(buttonUpdate);
 		buttonUpdate.setEnabled(false);
 		buttonUpdate.setMnemonic('u');
-		buttonUpdate.setFont(buttonUpdate.getFont().deriveFont(
-				buttonUpdate.getFont().getStyle() | Font.BOLD));
+		buttonUpdate.setFont(new Font("Tahoma", Font.BOLD, 18));
 		buttonUpdate.setForeground(Color.WHITE);
-		buttonUpdate.setBackground(Color.DARK_GRAY);
-		getContentPane().add(buttonUpdate, BorderLayout.SOUTH);
-		setLocationRelativeTo(null);
-		setResizable(false);
-		setSize(400, 110);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		buttonUpdate.setBackground(new Color(0, 153, 0));
 		buttonUpdate.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent event) {
+				buttonUpdate.setBackground(Color.DARK_GRAY);
 				startUpdate();
 			}
 		});
+		setLocationRelativeTo(null);
+		setResizable(false);
+		setSize(476, 129);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	/**

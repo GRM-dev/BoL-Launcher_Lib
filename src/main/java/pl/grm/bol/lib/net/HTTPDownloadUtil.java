@@ -24,7 +24,6 @@ public class HTTPDownloadUtil {
 		int responseCode = httpConn.getResponseCode();
 		if (responseCode == HttpURLConnection.HTTP_OK) {
 			String disposition = httpConn.getHeaderField("Content-Disposition");
-			String contentType = httpConn.getContentType();
 			contentLength = httpConn.getContentLength();
 			
 			if (disposition != null) {
@@ -35,8 +34,6 @@ public class HTTPDownloadUtil {
 			} else {
 				fileName = fileURL.substring(fileURL.lastIndexOf("/") + 1, fileURL.length());
 			}
-			System.out.println("Content-Type = " + contentType);
-			System.out.println("Content-Disposition = " + disposition);
 			System.out.println("Content-Length = " + contentLength);
 			System.out.println("fileName = " + fileName);
 			inputStream = httpConn.getInputStream();
